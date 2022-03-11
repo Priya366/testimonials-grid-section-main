@@ -1,0 +1,152 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fs-body: 0.93rem;
+    --clr-container-bg: hsl(210, 46%, 95%);
+    /*Light grayish blue*/
+    --clr-text-primary: hsl(0, 0%, 100%);
+    /*Light gray: */
+    --clr-grid-child-bg-1: hsl(263, 55%, 52%);
+    /*Moderate violet*/
+    --clr-grid-child-bg-2: hsl(217, 19%, 35%);
+    /*Very dark grayish blue*/
+    --clr-grid-child-bg-3: hsl(0, 0%, 100%);
+    /*white*/
+    --clr-grid-child-bg-4: hsl(219, 29%, 14%);
+    /*Very dark blackish blue*/
+    --clr-text-subheading: hsl(0, 0%, 50%);
+    --clr-text-paragraph: hsl(0, 0%, 70%);
+    --ff-primary: 'Barlow Semi Condensed', sans-serif;
+    --fw-medium: 500;
+    --fw-bold: 600;
+}
+
+
+/* TYPOGRAPHY */
+
+.profile-person-name {
+    margin: 0;
+    color: var(--clr-text-primary);
+    font-weight: var(--fw-bold);
+}
+
+.profile-person-qualification {
+    margin: 0;
+    color: var(--clr-text-subheading);
+}
+
+.main-text {
+    font-size: 1.2rem;
+}
+
+.sub-text {
+    font-weight: var(--fw-medium);
+    color: var(--clr-text-paragraph);
+}
+
+.child-3 .profile-person-name,
+.child-5 .profile-person-name {
+    color: hsl(0, 0%, 0%);
+}
+
+.child-3 .sub-text,
+.child-5 .sub-text {
+    color: hsl(0, 0%, 50%);
+}
+
+
+/* GENERAL STYLING  */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    background-color: var(--clr-container-bg);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* Grid container */
+
+.container {
+    margin: auto;
+    max-width: 1000px;
+    width: 90%;
+}
+
+.grid-child {
+    padding: 1em 1.2em;
+    color: var(--clr-text-primary);
+    border-radius: 0.33rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem var(--clr-container-bg);
+}
+
+.child-1 {
+    background-color: var(--clr-grid-child-bg-1);
+}
+
+.child-2 {
+    background-color: var(--clr-grid-child-bg-2);
+}
+
+.child-3,
+.child-5 {
+    background-color: var(--clr-grid-child-bg-3);
+    color: hsl(0, 0%, 0%);
+}
+
+.child-4 {
+    background-color: var(--clr-grid-child-bg-4);
+}
+
+
+/* Profile styling  */
+
+.profile img {
+    border-radius: 50%;
+    height: 30px;
+    display: block;
+    max-width: 100%;
+}
+
+
+/* RECOMMENDATIONS  */
+
+.recomendation {
+    text-align: center;
+}
+
+
+/* BIG SCREEN QUERIES  */
+
+@media (min-width: 769px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid-col-span-2 {
+        grid-column: span 2;
+    }
+    .grid-child:last-child {
+        grid-column-start: 4;
+        grid-row: 1/ span 2;
+    }
+}
